@@ -1,0 +1,21 @@
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+button:hover {
+    background-color: #0056b3;
+}
+  
+.texto {
+    font-size: 20px;
+    color: #dd7b22;
+    margin: 30px;
+    font-style: italic;
+    text-align: center;
+}
