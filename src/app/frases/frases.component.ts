@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-frases',
@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './frases.component.scss'
 })
 export class FrasesComponent {
+  @Input() mostrarFrase: boolean = true;
+  @Input() fraseAtual: string = '';
+
   frases: string[] = ["A persistência é o caminho do êxito.",
     'O sucesso é a soma de pequenos esforços repetidos diariamente.', 'Acredite em si mesmo e todo o resto se encaixará.',
     'O fracasso é apenas a oportunidade para recomeçar com mais inteligência.',
@@ -16,15 +19,11 @@ export class FrasesComponent {
     'Seja a mudança que você deseja ver no mundo.',
     'A felicidade não é algo pronto. Ela vem de suas próprias ações.',
     'Com determinação e fé, você pode mover montanhas.']
-  exibirMensagem: boolean = false;
-  frase: string = "";
+  
 
-    public fraseAleatoria() : void{
-      this.exibirMensagem = !this.exibirMensagem;
-
-      if (this.exibirMensagem || this.frase == "") {
-        this.frase = this.frases[Math.floor(Math.random() * this.frases.length)]
-      }
+    SortearFrase(): string {
+      const indiceAleatorio = Math.floor(Math.random() * this.frases.length);
+      return this.frases[indiceAleatorio];
     }
 
   //Dupla: Matheus Henrique e Vitor Henrique
